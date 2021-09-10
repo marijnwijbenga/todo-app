@@ -1,18 +1,21 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from "./app-routing.module";
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { DarkmodeToggleComponent } from './components/darkmode-toggle/darkmode-toggle.component';
-import { BrandingComponent } from './layout/branding/branding.component';
-import { HeadingComponent } from './layout/heading/heading.component';
-import { PageComponent } from './layout/page/page.component';
-import { PanelBodyComponent } from './layout/panel/panel-body/panel-body.component';
-import { PanelContainerComponent } from './layout/panel-container/panel-container.component';
-import { PanelHeaderComponent } from './layout/panel/panel-header/panel-header.component';
-import { PanelComponent } from './layout/panel/panel.component';
+import {AppComponent} from './app.component';
+import {DarkmodeToggleComponent} from './components/darkmode-toggle/darkmode-toggle.component';
+import {BrandingComponent} from './layout/branding/branding.component';
+import {HeadingComponent} from './layout/heading/heading.component';
+import {PageComponent} from './layout/page/page.component';
+import {PanelBodyComponent} from './components/panel-body/panel-body.component';
+import {PanelContainerComponent} from './components/panel-container/panel-container.component';
+import {PanelHeaderComponent} from './components/panel-header/panel-header.component';
+import {PanelComponent} from './components/panel/panel.component';
+import {HomeComponent} from "./views/home/home.component";
 
 @NgModule({
   declarations: [
+    HomeComponent,
     AppComponent,
     PageComponent,
     HeadingComponent,
@@ -24,9 +27,11 @@ import { PanelComponent } from './layout/panel/panel.component';
     PanelBodyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

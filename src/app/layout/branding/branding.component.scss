@@ -1,0 +1,11 @@
+.branding {
+  @apply flex flex-row text-gray-600 w-60 mx-auto;
+
+  &__justify {
+    @apply flex flex-row mx-auto;
+  }
+
+  &__image {
+    @apply pt-1 mr-2;
+  }
+}
