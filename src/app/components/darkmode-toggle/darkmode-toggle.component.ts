@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DarkmodeService } from '../../services/darkmode.service';
 
 @Component({
   selector: 'app-darkmode-toggle',
@@ -6,4 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['darkmode-toggle.component.scss']
 })
 
-export class DarkmodeToggleComponent {}
+export class DarkmodeToggleComponent implements OnInit {
+
+  constructor(private darkModeService: DarkmodeService) {
+  }
+
+  ngOnInit():void {
+    this.darkModeService.getDarkModeSetting();
+  }
+
+  toggleDarkMode(): void {
+    this.darkModeService.darkModeToggle();
+  }
+}

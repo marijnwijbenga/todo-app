@@ -1,5 +1,5 @@
 .branding {
-  @apply flex flex-row text-gray-600 w-60 mx-auto;
+  @apply flex flex-row dark:text-gray-600 text-gray-500 w-60 mx-auto;
 
   &__justify {
     @apply flex flex-row mx-auto;
