@@ -1,39 +1,30 @@
 import { Injectable } from '@angular/core';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class DarkmodeService {
+  constructor(private storageService: StorageService) {}
 
-  darkMode: boolean = true;
+  getDarkMode(): boolean {
+    return this.storageService.getStorage('darkMode');
+  }
 
-  getDarkModeSetting(): void {
-    if (localStorage.getItem('darkMode') && (localStorage.getItem('darkMode') === 'true')) {
-      this.enableDarkMode();
-      this.darkMode = true;
-    } else if (localStorage.getItem('darkMode') === 'false') {
-      this.disableDarkMode();
-      this.darkMode = false;
+  setDarkMode(darkMode: boolean): void {
+    switch (darkMode) {
+      case true:
+        document.documentElement.classList.add('dark');
+        break;
+      case false:
+        document.documentElement.classList.remove('dark');
+        break;
     }
   }
 
-  darkModeToggle(): void {
-    document.documentElement.classList.toggle('dark');
-    this.darkMode = !this.darkMode;
-    this.storeDarkModeSetting();
-  }
-
-  enableDarkMode(): void {
-    document.documentElement.classList.add('dark');
-  }
-
-  disableDarkMode(): void {
-    document.documentElement.classList.remove('dark');
-  }
-
-  storeDarkModeSetting(): void {
-    localStorage.setItem('darkMode', String(this.darkMode));
+  storeDarkMode(darkMode: boolean):void {
+      this.storageService.setStorage('darkMode', darkMode)
   }
 
 }

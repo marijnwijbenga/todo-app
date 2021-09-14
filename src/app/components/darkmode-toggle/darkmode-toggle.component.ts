@@ -8,15 +8,27 @@ import { DarkmodeService } from '../../services/darkmode.service';
 })
 
 export class DarkmodeToggleComponent implements OnInit {
-
   constructor(private darkModeService: DarkmodeService) {
   }
 
-  ngOnInit():void {
-    this.darkModeService.getDarkModeSetting();
+  darkMode: boolean = true;
+
+  ngOnInit(): void {
+    this.setDarkMode();
+  }
+
+  getDarkMode(): boolean {
+    return this.darkModeService.getDarkMode();
+  }
+
+  setDarkMode() {
+    this.darkMode = this.getDarkMode();
+    this.darkModeService.setDarkMode(this.darkMode);
   }
 
   toggleDarkMode(): void {
-    this.darkModeService.darkModeToggle();
+    this.darkMode = !this.darkMode;
+    this.darkModeService.setDarkMode(this.darkMode);
+    this.darkModeService.storeDarkMode(this.darkMode);
   }
 }

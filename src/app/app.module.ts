@@ -12,6 +12,7 @@ import {PanelContainerComponent} from './components/panel-container/panel-contai
 import {PanelHeaderComponent} from './components/panel-header/panel-header.component';
 import {PanelComponent} from './components/panel/panel.component';
 import { DarkmodeService } from './services/darkmode.service';
+import { StorageService } from './services/storage.service';
 import {HomeComponent} from "./views/home/home.component";
 
 @NgModule({
@@ -31,7 +32,7 @@ import {HomeComponent} from "./views/home/home.component";
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [DarkmodeService],
+  providers: [DarkmodeService, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
