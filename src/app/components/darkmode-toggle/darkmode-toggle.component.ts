@@ -12,6 +12,7 @@ export class DarkmodeToggleComponent implements OnInit {
   }
 
   darkMode: boolean = true;
+  defaultDarkMode: boolean = true;
 
   ngOnInit(): void {
     this.setDarkMode();
@@ -22,7 +23,12 @@ export class DarkmodeToggleComponent implements OnInit {
   }
 
   setDarkMode() {
-    this.darkMode = this.getDarkMode();
+    if(this.getDarkMode() === null) {
+      this.darkMode = this.defaultDarkMode;
+    } else {
+      this.darkMode = this.getDarkMode();
+    }
+
     this.darkModeService.setDarkMode(this.darkMode);
   }
 
