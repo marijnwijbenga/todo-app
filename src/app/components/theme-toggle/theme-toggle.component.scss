@@ -1,0 +1,49 @@
+.theme-toggle {
+  @apply w-60 flex flex-row justify-end;
+
+  &__button {
+    @apply rounded-full p-2;
+  }
+
+  &__button-light {
+    @apply bg-gray-300;
+  }
+
+  &__button-dark {
+    @apply bg-gray-600;
+  }
+
+  &__icon-container {
+    @apply flex flex-row;
+  }
+
+  &__icons {
+    @apply flex flex-row;
+  }
+
+  &__icon-moon {
+    @apply w-6 mr-2;
+  }
+
+  &__icon-sun {
+    @apply w-6;
+  }
+
+  &__circle-container {
+    @apply absolute;
+  }
+
+  &__circle {
+    @apply text-gray-800 border-2 rounded-full border-gray-800 bg-gray-800 fill-current w-6 h-6;
+  }
+
+  &__animate-slide-in {
+    @apply transform translate-x-8 transition duration-300 ease-in-out;
+  }
+
+  &__animate-slide-out {
+    @apply transform translate-x-0 transition duration-300 ease-in-out
+  }
+}
+
+

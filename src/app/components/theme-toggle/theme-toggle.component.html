@@ -1,0 +1,17 @@
+<div class="theme-toggle">
+  <button
+    class="theme-toggle__button"
+    [ngClass]="isLightModeEnabled?'theme-toggle__button-light':'theme-toggle__button-dark'"
+    (click)="onToggle()">
+    <div class="theme-toggle__icon-container">
+      <div class="theme-toggle__icons">
+        <img src="./assets/img/dark.svg" alt="moon" class="theme-toggle__icon-moon">
+        <img src="./assets/img/light.svg" alt="sun" class="theme-toggle__icon-sun">
+      </div>
+      <div class="theme-toggle__circle-container"
+           [ngClass]="isLightModeEnabled?'theme-toggle__animate-slide-in':'theme-toggle__animate-slide-out'">
+        <img src="./assets/img/circle.svg" alt="" class="theme-toggle__circle">
+      </div>
+    </div>
+  </button>
+</div>
