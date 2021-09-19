@@ -1,0 +1,30 @@
+<div class="add-item">
+  <div class="add-item__input__container">
+    <input type="text"
+           class="bg-gray-400 text-white dark:bg-gray-500 add-item__input"
+           [(ngModel)]="itemTitle"
+           (focusin)="onFocusIn()"
+           (focusout)="onFocusOut()"
+           [placeholder]="placeholder"
+           (keydown.enter)="saveItem()">
+  </div>
+  <div
+    class="add-item__animate"
+    [ngClass]="showSubmitButton?'add-item__button--show':'add-item__button--hide'">
+    <button
+      (click)="saveItem()"
+      class="add-item__button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-green-500 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+              clip-rule="evenodd"/>
+      </svg>
+    </button>
+  </div>
+</div>
+<div
+  *ngIf="showTip"
+  [ngClass]="showTip?'add-item__tip--show':'add-item__tip--hide'"
+  class="text-gray-500 dark:text-gray-400 add-item__tip add-item__animate">
+  Tip: press enter to save
+</div>

@@ -1,0 +1,44 @@
+.add-item {
+  @apply pt-4 flex flex-row justify-between content-center overflow-hidden;
+
+  &__input {
+    @apply w-full rounded-lg placeholder-gray-100 font-semibold  focus:outline-none focus:ring-transparent focus:ring-0 ring-0 border-0;
+
+    &__container {
+      @apply w-full;
+    }
+  }
+
+  &__button {
+    @apply align-middle h-full ml-4;
+    &--hide {
+      @apply w-0 overflow-hidden;
+    }
+
+    &--show {
+      @apply w-2/12;
+    }
+  }
+
+  &__animate {
+    @apply duration-700 transition-all;
+  }
+
+
+  &__tip {
+    @apply mt-3 ml-3 overflow-hidden;
+
+    &--show {
+      @apply h-auto;
+    }
+
+    &--hide {
+      @apply h-0;
+    }
+  }
+
+}
+
+
+
+
