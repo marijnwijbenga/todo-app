@@ -4,9 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AddTaskComponent } from './components/add-task/add-task.component';
-import { TaskListComponent } from './components/task-list/task-list.component';
-import { TaskComponent } from './components/task/task.component';
+import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
+import { TaskListComponent } from './components/tasks/task-list/task-list.component';
+import { TaskComponent } from './components/tasks/task/task.component';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { BrandingComponent } from './layout/branding/branding.component';
 import { HeadingComponent } from './layout/heading/heading.component';

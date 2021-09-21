@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-task-list',
@@ -7,8 +6,5 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['task-list.component.scss']
 })
 export class TaskListComponent {
-  constructor(private taskService: TaskService) {
-  }
 
-  tasks = this.taskService.get();
 }
