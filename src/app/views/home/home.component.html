@@ -7,17 +7,18 @@
     <app-panel>
       <app-panel-header></app-panel-header>
       <app-panel-body>
-        <app-add-item
-          placeholder="Add a Daily">
-        </app-add-item>
+
       </app-panel-body>
     </app-panel>
     <app-panel>
       <app-panel-header></app-panel-header>
       <app-panel-body>
-        <app-add-item
+        <app-add-task
           placeholder="Add a Task">
-        </app-add-item>
+        </app-add-task>
+        <app-task-list>
+          <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+        </app-task-list>
       </app-panel-body>
     </app-panel>
   </app-panel-container>
