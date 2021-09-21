@@ -2,17 +2,17 @@
   <div class="add-item__input__container">
     <input type="text"
            class="bg-gray-400 text-white dark:bg-gray-500 add-item__input"
-           [(ngModel)]="itemTitle"
+           [(ngModel)]="taskTitle"
            (focusin)="onFocusIn()"
            (focusout)="onFocusOut()"
            [placeholder]="placeholder"
-           (keydown.enter)="saveItem()">
+           (keydown.enter)="saveTask()">
   </div>
   <div
     class="add-item__animate"
     [ngClass]="showSubmitButton?'add-item__button--show':'add-item__button--hide'">
     <button
-      (click)="saveItem()"
+      (click)="saveTask()"
       class="add-item__button">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 dark:text-green-500 text-green-600" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd"
