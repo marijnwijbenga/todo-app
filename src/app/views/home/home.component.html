@@ -11,7 +11,9 @@
       </app-panel-body>
     </app-panel>
     <app-panel>
-      <app-panel-header></app-panel-header>
+      <app-panel-header>
+        <app-item-count [itemCount]="openTasks()" [plural]="'Tasks'" [singular]="'Task'"></app-item-count>
+      </app-panel-header>
       <app-panel-body>
         <app-add-task
           placeholder="Add a Task">

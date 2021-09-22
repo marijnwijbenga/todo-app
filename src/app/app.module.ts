@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ItemCountComponent } from './components/item-count/item-count.component';
 import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
 import { TaskListComponent } from './components/tasks/task-list/task-list.component';
 import { TaskComponent } from './components/tasks/task/task.component';
@@ -34,7 +35,8 @@ import { HomeComponent } from './views/home/home.component';
     PanelBodyComponent,
     AddTaskComponent,
     TaskComponent,
-    TaskListComponent
+    TaskListComponent,
+    ItemCountComponent
   ],
   imports: [
     BrowserModule,

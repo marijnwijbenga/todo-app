@@ -13,6 +13,11 @@ export class HomeComponent {
   ) {
   }
 
+  openItems: number = 0;
   tasks = this.taskService.get();
+
+  openTasks(): number {
+    return this.openItems = this.tasks.filter(item => !item.completed).length;
+  }
 
 }
