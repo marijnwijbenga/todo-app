@@ -16,6 +16,7 @@ module.exports = {
   variants: {
     extend: {
       outline: ["focus"],
+      margin: ['first']
     },
   },
   plugins: [require('@tailwindcss/forms')],

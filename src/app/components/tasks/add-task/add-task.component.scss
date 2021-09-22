@@ -5,12 +5,12 @@
     @apply w-full rounded-lg placeholder-gray-100 font-semibold  focus:outline-none focus:ring-transparent focus:ring-0 ring-0 border-0;
 
     &__container {
-      @apply w-full;
+      @apply w-full ;
     }
   }
 
   &__button {
-    @apply align-middle h-full ml-4;
+    @apply h-full mx-auto w-full;
     &--hide {
       @apply w-0 overflow-hidden;
     }

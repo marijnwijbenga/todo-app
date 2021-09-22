@@ -14,30 +14,24 @@ export class AddTaskComponent {
   }
 
   showSubmitButton: boolean = false;
-  showTip: boolean = false;
 
   @Input() placeholder = '';
 
   taskTitle: string = '';
   important: boolean = false;
-  task: TaskModel = {title: this.taskTitle, important: this.important};
+  task: TaskModel = {title: this.taskTitle, important: this.important, completed: false};
 
   onFocusIn(): void {
     this.showSubmitButton = true;
-    this.showTip = true;
-  }
-
-  onFocusOut() {
-    this.showTip = false;
   }
 
   saveTask() {
     this.task = {
       title: this.taskTitle,
-      important: this.important
-    }
+      important: this.important,
+      completed: false
+    };
     this.taskService.create(this.task);
-    console.log(this.task);
     this.taskTitle = '';
   }
 }
