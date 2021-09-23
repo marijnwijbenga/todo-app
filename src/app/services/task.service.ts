@@ -25,12 +25,10 @@ export class TaskService {
 
   //update task
   update(task: TaskModel, index: number): TaskModel {
-    //todo get all values from the task in here and update all of them
-    console.log(index);
     this.tasks[index] = {
       title: task.title,
       completed: task.completed,
-      important: task.completed
+      important: task.important
     }
     return task;
   }
