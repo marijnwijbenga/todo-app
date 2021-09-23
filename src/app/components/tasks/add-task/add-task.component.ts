@@ -9,23 +9,21 @@ import { TaskService } from '../../../services/task.service';
 })
 export class AddTaskComponent {
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService) {}
 
-  }
+  @Input() placeholder: string = '';
 
   showSubmitButton: boolean = false;
 
-  @Input() placeholder = '';
-
   taskTitle: string = '';
   important: boolean = false;
-  task: TaskModel = {title: this.taskTitle, important: this.important, completed: false};
+  task: TaskModel = {title: '', important: false, completed: false};
 
   onFocusIn(): void {
     this.showSubmitButton = true;
   }
 
-  saveTask() {
+  saveTask(): TaskModel {
     this.task = {
       title: this.taskTitle,
       important: this.important,
@@ -33,5 +31,6 @@ export class AddTaskComponent {
     };
     this.taskService.create(this.task);
     this.taskTitle = '';
+    return this.task;
   }
 }

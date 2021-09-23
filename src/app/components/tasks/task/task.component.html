@@ -1,20 +1,27 @@
-<div *ngIf="!task.completed" class="bg-green-600 mb-2 p-2 rounded-lg">
+<div
+  [ngClass]="task.completed?'bg-gray-600':'bg-green-600'"
+  class=" mb-2 p-2 rounded-lg">
   <div class="flex flex-row justify-between">
     <div class="flex flex-row">
       <div class="mr-4">
         <input type="checkbox"
+               [ngClass]="task.completed?'text-gray-500':'bg-green-400 text-green-500'"
                (click)="completeTask(task, index)"
                (mouseover)="showCheckmark = true"
-               (mouseleave)="showCheckmark = false"
-               [checked]="showCheckmark"
-               class="hover:checked h-8 w-8 rounded-lg bg-green-400 border-0 text-green-500 outline-none focus:outline-none focus:ring-0 focus:border-0 ring-0 cursor-pointer">
+               (mouseout)="showCheckmark = false"
+               [checked]="showCheckmark || task.completed"
+               class="h-8 w-8 rounded-lg border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 ring-0 cursor-pointer">
       </div>
-      <div class="text-green-50 text-lg">
+      <div
+        [ngClass]="task.completed?'text-gray-400':'text-green-50'"
+        class=" text-lg">
         {{task.title}}
       </div>
     </div>
     <div *ngIf="task.important">
-      <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        [ngClass]="task.completed?'text-gray-500':'text-green-400'"
+        class="w-6 h-6 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd"
               d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
               clip-rule="evenodd"></path>

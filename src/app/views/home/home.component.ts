@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { TaskService } from '../../services/task.service';
 
 @Component({
@@ -15,9 +15,11 @@ export class HomeComponent {
 
   openItems: number = 0;
   tasks = this.taskService.get();
+  @Input() showCompleted: boolean = false;
 
   openTasks(): number {
     return this.openItems = this.tasks.filter(item => !item.completed).length;
   }
+
 
 }
