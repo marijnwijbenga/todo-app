@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 
@@ -13,15 +13,19 @@ export class TaskComponent {
   ) {
   }
 
-  @Input() task: TaskInterface = {title: '', important: false, completed: false}
+  @Input() task: TaskInterface = {title: '', important: false, completed: false};
   @Input() index: number = 0;
 
+  @Output() taskOutput = new EventEmitter<{task: TaskInterface, index: number}>();
+
   showCheckmark = false;
-  showCompleted: boolean = true;
 
   completeTask(task: TaskInterface, index: number): void {
     this.task.completed = true;
     this.taskService.update(this.task, index);
   }
 
+  openInModal(task: TaskInterface, index: number) {
+    this.taskOutput.emit({task, index});
+  }
 }

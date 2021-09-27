@@ -1,9 +1,9 @@
 <div
-  class="fixed top-0 left-0 w-screen h-screen bg-gray-800 bg-opacity-90 flex flex-row ">
-  <div class="h-72 bg-gray-700 mx-auto mt-48 rounded-lg shadow-lg">
-    <div class="flex flex-row  w-full bg-green-500 pt-2 rounded-t-lg px-4">
+  class="fixed top-0 left-0 w-screen h-screen bg-gray-700 bg-opacity-80 flex flex-row items-center">
+  <div class="bg-gray-700 mx-auto rounded-lg shadow-lg flex flex-col justify-between">
+    <div class="grow-0 bg-green-700 pt-2 rounded-t-lg px-4">
       <div>
-        <div class="text-center mb-2 font-semibold text-green-900">
+        <div class="text-center mb-2 font-semibold text-green-500">
           Edit Daily
         </div>
         <div class="m-4">
@@ -13,8 +13,8 @@
                 <label for="itemTitle" class="text-gray-800 font-semibold">Title</label>
               </div>
               <div class="w-96">
-                <input type="text" id="itemTitle" class="bg-green-300 text-gray-800 text-lg border-0 rounded w-full "
-                       value="Buy some socks with holes">
+                <input type="text" id="itemTitle" class="bg-green-500 text-gray-800 text-lg border-0 rounded w-full "
+                       value="{{ task.title }}">
               </div>
             </div>
             <div class="mx-8 pt-6">
@@ -27,18 +27,33 @@
                           clip-rule="evenodd"/>
                   </svg>
                 </div>
-                <div class="text-green-700 text-sm">
+                <div class="text-green-500 text-sm">
                   Important
                 </div>
               </button>
             </div>
             <div class="pt-6">
-              <button class="text-green-900 font-semibold ml-4">Cancel</button>
-              <button class="bg-green-100 m-4 py-2 px-4 rounded-lg shadow-lg font-semibold">Save</button>
+              <button class="text-gray-800 font-semibold ml-4">Cancel</button>
+              <button class="bg-yellow-400 text-gray-800 m-4 py-2 px-4 rounded-lg shadow-lg font-bold">Save</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="bg-gray-800 p-8 text-center flex flex-col">
+      <button>
+        <div class="text-center">
+          <svg class="w-8 h-8 text-red-400 mx-auto" fill="currentColor" viewBox="0 0 20 20"
+               xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                  clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div class="text-red-400 font-bold rounded-b-lg">
+          delete
+        </div>
+      </button>
     </div>
   </div>
 </div>

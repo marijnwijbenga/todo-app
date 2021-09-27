@@ -11,8 +11,8 @@
     </app-panel>
     <app-panel>
       <app-panel-header>
-        <app-item-count [itemCount]="openTasks" [plural]="'Tasks'" [singular]="'Task'"></app-item-count>
-        <app-filter-tasks (showCompleted)="showCompleted"></app-filter-tasks>
+        <app-item-count [itemCount]="amountOpenTasks" [plural]="'Tasks'" [singular]="'Task'"></app-item-count>
+        <app-filter-tasks (showCompletedOutput)="showCompletedTasks($event)"></app-filter-tasks>
       </app-panel-header>
       <app-panel-body>
         <app-add-task
@@ -22,11 +22,12 @@
           <app-task
             [task]="task"
             *ngFor="let task of filteredTasks; index as index"
-            [index]="index">
+            [index]="index"
+            (taskOutput)="openModal($event)">
           </app-task>
         </app-task-list>
       </app-panel-body>
     </app-panel>
   </app-panel-container>
 </app-page>
-<app-modal *ngIf="showModal"></app-modal>
+<app-modal *ngIf="showModal" [task]="task" [index]="index"></app-modal>

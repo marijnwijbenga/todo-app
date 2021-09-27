@@ -1,8 +1,7 @@
 <div
-  *ngIf="showCompleted"
   [ngClass]="task.completed?'bg-gray-600':'bg-green-600'"
   class="mb-2 p-2 rounded-lg">
-  <div class="flex flex-row justify-between">
+  <div class="flex flex-row justify-between cursor-pointer" (click)="openInModal(task, index)">
     <div class="flex flex-row">
       <div class="mr-4">
         <input type="checkbox"
@@ -13,11 +12,13 @@
                [checked]="showCheckmark || task.completed"
                class="h-8 w-8 rounded-lg border-0 outline-none focus:outline-none focus:ring-0 focus:border-0 ring-0 cursor-pointer">
       </div>
-      <div
-        [ngClass]="task.completed?'text-gray-400':'text-green-50'"
-        class=" text-lg">
-        {{task.title}}
-      </div>
+      <button>
+        <div
+          [ngClass]="task.completed?'text-gray-400':'text-green-50'"
+          class="text-lg">
+          {{task.title}}
+        </div>
+      </button>
     </div>
     <div *ngIf="task.important">
       <svg

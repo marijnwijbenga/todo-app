@@ -1,5 +1,5 @@
 <button
-  (click)="toggleShowCompleted(showCompleted)"
+  (click)="showCompletedEmitterFunction(showCompleted = !showCompleted)"
   class="text-green-500">
   <span *ngIf="showCompleted; else elseBlock">
     Hide

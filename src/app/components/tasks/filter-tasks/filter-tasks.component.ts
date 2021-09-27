@@ -6,12 +6,19 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['filter-tasks.component.scss']
 })
 export class FilterTasksComponent {
-@Output() showCompleted = new EventEmitter<boolean>();
+@Output() showCompletedOutput = new EventEmitter<boolean>();
+
+showCompleted:boolean = false;
+
+// pad =
+  // 1. output showCompleted boolean via link vanuit filter-tasks.component.html
+  // 2. vang out
 
 // todo input met ngModel en changed uitzoeken
 
-toggleShowCompleted(showCompleted: boolean) {
-  this.showCompleted.emit(showCompleted)
+showCompletedEmitterFunction(showCompleted: boolean) {
+  this.showCompletedOutput.emit(showCompleted)
+  console.log('i am the showcompletedemitterfunction and i have outputted:', showCompleted);
 }
 
 }
