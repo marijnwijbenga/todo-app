@@ -1,0 +1,13 @@
+<button
+  (click)="toggleShowCompleted(showCompleted)"
+  class="text-green-500">
+  <span *ngIf="showCompleted; else elseBlock">
+    Hide
+  </span>
+  <ng-template #elseBlock>
+    <span>
+      Show
+    </span>
+  </ng-template>
+  completed
+</button>

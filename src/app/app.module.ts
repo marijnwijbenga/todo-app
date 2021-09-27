@@ -5,7 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ItemCountComponent } from './components/item-count/item-count.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { AddTaskComponent } from './components/tasks/add-task/add-task.component';
+import { FilterTasksComponent } from './components/tasks/filter-tasks/filter-tasks.component';
 import { TaskListComponent } from './components/tasks/task-list/task-list.component';
 import { TaskComponent } from './components/tasks/task/task.component';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
@@ -36,7 +38,9 @@ import { HomeComponent } from './views/home/home.component';
     AddTaskComponent,
     TaskComponent,
     TaskListComponent,
-    ItemCountComponent
+    ItemCountComponent,
+    FilterTasksComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

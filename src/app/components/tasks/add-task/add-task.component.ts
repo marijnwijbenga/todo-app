@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TaskModel } from '../../../models/task.model';
+import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 
 @Component({
@@ -17,13 +17,13 @@ export class AddTaskComponent {
 
   taskTitle: string = '';
   important: boolean = false;
-  task: TaskModel = {title: '', important: false, completed: false};
+  task: TaskInterface = {title: '', important: false, completed: false};
 
   onFocusIn(): void {
     this.showSubmitButton = true;
   }
 
-  saveTask(): TaskModel {
+  saveTask(): TaskInterface {
     this.task = {
       title: this.taskTitle,
       important: this.important,

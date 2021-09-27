@@ -1,4 +1,5 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TaskInterface } from '../../interfaces/task.interface';
 import { TaskService } from '../../services/task.service';
 
 @Component({
@@ -7,19 +8,38 @@ import { TaskService } from '../../services/task.service';
   styleUrls: ['home.component.scss']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  tasks: TaskInterface[] = [];
+
+  openItems: number = 0;
+  showModal: boolean = false;
+  @Input() showCompleted: boolean = false;
+
   constructor(
     private taskService: TaskService
   ) {
   }
 
-  openItems: number = 0;
-  tasks = this.taskService.get();
-  @Input() showCompleted: boolean = false;
+  ngOnInit(): void {
+    this.taskService.get$().subscribe(
+      (tasks: TaskInterface[]) => {
+        this.tasks = tasks;
+      },
+      () => {
 
-  openTasks(): number {
-    return this.openItems = this.tasks.filter(item => !item.completed).length;
+      }
+    );
   }
 
+  get filteredTasks(): TaskInterface[] {
+    // if() {
+    //
+    // }
+    return this.tasks;
+  }
+
+  get openTasks(): number {
+    return this.openItems = this.tasks.filter(item => !item.completed).length;
+  }
 
 }

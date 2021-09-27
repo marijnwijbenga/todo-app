@@ -1,6 +1,6 @@
-import { TaskModel } from '../models/task.model';
+import { TaskInterface } from '../interfaces/task.interface';
 
-export const TASKS: TaskModel[] = [
+export const TASKS: TaskInterface[] = [
   {
     title: 'Do groceries',
     important: false,
