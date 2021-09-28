@@ -1,0 +1,13 @@
+.important {
+  @apply mx-8 pt-6;
+
+  &-icon {
+    @apply w-full;
+  }
+
+  &-text {
+    @apply text-green-500 text-sm;
+  }
+
+}
+

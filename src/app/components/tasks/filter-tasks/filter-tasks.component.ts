@@ -10,9 +10,6 @@ export class FilterTasksComponent {
 
 showCompleted:boolean = false;
 
-// pad =
-  // 1. output showCompleted boolean via link vanuit filter-tasks.component.html
-  // 2. vang out
 
 // todo input met ngModel en changed uitzoeken
 

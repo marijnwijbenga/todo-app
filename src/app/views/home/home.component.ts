@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
   }
 
   get amountOpenTasks(): number {
-    return this.openItems = this.tasks.length;
+    return this.openItems = this.tasks.filter(item => !item.completed).length;
   }
 
   showCompletedTasks(showCompleted: boolean) {
@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     console.log(this.showCompleted);
   }
 
-  openModal(eventObject: any) {
+  openInModal(eventObject: any) {
     this.showModal = true;
     this.task = eventObject.task
     this.index = eventObject.index;

@@ -5,13 +5,8 @@
   </app-heading>
   <app-panel-container>
     <app-panel>
-      <app-panel-header></app-panel-header>
-      <app-panel-body>
-      </app-panel-body>
-    </app-panel>
-    <app-panel>
       <app-panel-header>
-        <app-item-count [itemCount]="amountOpenTasks" [plural]="'Tasks'" [singular]="'Task'"></app-item-count>
+        <app-item-count [itemCount]="amountOpenTasks" [singular]="'Task'" [plural]="'Tasks'"></app-item-count>
         <app-filter-tasks (showCompletedOutput)="showCompletedTasks($event)"></app-filter-tasks>
       </app-panel-header>
       <app-panel-body>
@@ -23,11 +18,16 @@
             [task]="task"
             *ngFor="let task of filteredTasks; index as index"
             [index]="index"
-            (taskOutput)="openModal($event)">
+            (taskOutput)="openInModal($event)">
           </app-task>
         </app-task-list>
       </app-panel-body>
     </app-panel>
   </app-panel-container>
 </app-page>
-<app-modal *ngIf="showModal" [task]="task" [index]="index"></app-modal>
+<app-modal *ngIf="showModal" [task]="task" [index]="index">
+  <app-modal-input slot="modal-input" [task]="task"></app-modal-input>
+  <app-modal-important-button slot="modal-important-button"></app-modal-important-button>
+  <app-modal-cancel-button slot="modal-cancel-button"></app-modal-cancel-button>
+  <app-modal-save-button slot="modal-save-button"></app-modal-save-button>
+</app-modal>

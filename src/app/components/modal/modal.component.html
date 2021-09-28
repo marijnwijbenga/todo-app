@@ -1,56 +1,39 @@
 <div
-  class="fixed top-0 left-0 w-screen h-screen bg-gray-700 bg-opacity-80 flex flex-row items-center">
-  <div class="bg-gray-700 mx-auto rounded-lg shadow-lg flex flex-col justify-between">
-    <div class="grow-0 bg-green-700 pt-2 rounded-t-lg px-4">
+  class="modal__background">
+  <div class="modal">
+    <div class="modal__header">
       <div>
-        <div class="text-center mb-2 font-semibold text-green-500">
-          Edit Daily
+        <div class="modal__title">
+          Edit Task
         </div>
         <div class="m-4">
-          <div class="flex flex-row items-center">
+          <div class="modal__controls">
             <div>
               <div>
-                <label for="itemTitle" class="text-gray-800 font-semibold">Title</label>
+                <label for="itemTitle" class="modal__label">Title</label>
               </div>
-              <div class="w-96">
-                <input type="text" id="itemTitle" class="bg-green-500 text-gray-800 text-lg border-0 rounded w-full "
-                       value="{{ task.title }}">
-              </div>
+              <ng-content select="[slot=modal-input]"></ng-content>
             </div>
-            <div class="mx-8 pt-6">
-              <button>
-                <div class="w-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mx-auto " viewBox="0 0 20 20"
-                       fill="currentColor">
-                    <path fill-rule="evenodd"
-                          d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
-                          clip-rule="evenodd"/>
-                  </svg>
-                </div>
-                <div class="text-green-500 text-sm">
-                  Important
-                </div>
-              </button>
-            </div>
+            <ng-content select="[slot=modal-important-button]"></ng-content>
             <div class="pt-6">
-              <button class="text-gray-800 font-semibold ml-4">Cancel</button>
-              <button class="bg-yellow-400 text-gray-800 m-4 py-2 px-4 rounded-lg shadow-lg font-bold">Save</button>
+              <ng-content select="[slot=modal-cancel-button]"></ng-content>
+              <ng-content select="[slot=modal-save-button]"></ng-content>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="bg-gray-800 p-8 text-center flex flex-col">
+    <div class="bg-gray-800 p-8 text-center flex flex-col rounded-b-lg">
       <button>
         <div class="text-center">
-          <svg class="w-8 h-8 text-red-400 mx-auto" fill="currentColor" viewBox="0 0 20 20"
+          <svg class="w-6 h-6 text-red-400 mx-auto" fill="currentColor" viewBox="0 0 20 20"
                xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd"
                   d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                   clip-rule="evenodd"></path>
           </svg>
         </div>
-        <div class="text-red-400 font-bold rounded-b-lg">
+        <div class="text-red-400 font-semibold rounded-b-lg">
           delete
         </div>
       </button>
