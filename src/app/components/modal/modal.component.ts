@@ -8,7 +8,4 @@ import { TaskInterface } from '../../interfaces/task.interface';
 })
 export class ModalComponent  {
 
-  @Input() task: TaskInterface = {title: '', important: false, completed: false};
-  @Input() index: number = 0;
-
 }

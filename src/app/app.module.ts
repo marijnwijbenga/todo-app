@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemCountComponent } from './components/item-count/item-count.component';
 import { ModalCancelButtonComponent } from './components/modal/modal-cancel-button/modal-cancel-button.component';
+import { ModalDeleteButtonComponent } from './components/modal/modal-delete-button/modal-delete-button.component';
 import { ModalImportantButtonComponent } from './components/modal/modal-important-button/modal-important-button.component';
 import { ModalInputComponent } from './components/modal/modal-input/modal-input.component';
 import { ModalSaveButtonComponent } from './components/modal/modal-save-button/modal-save-button.component';
@@ -48,7 +49,8 @@ import { HomeComponent } from './views/home/home.component';
     ModalInputComponent,
     ModalImportantButtonComponent,
     ModalCancelButtonComponent,
-    ModalSaveButtonComponent
+    ModalSaveButtonComponent,
+    ModalDeleteButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,16 @@
 <div class="important">
-  <button>
+  <button (click)="onClick(taskImportant = !taskImportant, index)">
     <div class="important-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mx-auto" viewBox="0 0 20 20"
+      <svg [ngClass]="taskImportant?'text-green-200':'text-green-800'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  mx-auto" viewBox="0 0 20 20"
            fill="currentColor">
         <path fill-rule="evenodd"
               d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
               clip-rule="evenodd"/>
       </svg>
     </div>
-    <div class="important-text">
+    <div
+      [ngClass]="taskImportant?'text-green-200':'text-green-900'"
+      class="important-text">
       Important
     </div>
   </button>

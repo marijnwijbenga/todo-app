@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TaskInterface } from '../../../interfaces/task.interface';
 
 @Component({
   selector: 'app-modal-important-button',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['modal-important-button.component.scss']
 })
 export class ModalImportantButtonComponent {
+  @Input() taskImportant: boolean | undefined = false;
+  @Input() task: TaskInterface = {title: '', important: false, completed: false}
+  @Input() index: number = 0;
+  @Output() updatedTaskImportant = new EventEmitter<object>();
 
+  onClick(important: boolean, index: number) {
+    this.updatedTaskImportant.emit({important, index})
+  }
 }
