@@ -26,29 +26,4 @@
   </app-panel-container>
 </app-page>
 <app-modal *ngIf="showModal">
-  <app-modal-input
-    slot="modal-input"
-    [task]="task"
-    [taskTitle]="task.title"
-    (updatedTaskTitle)="updateTaskTitle($event)"
-    [index]="index">
-  </app-modal-input>
-  <app-modal-important-button
-    slot="modal-important-button"
-    [task]="task"
-    [taskImportant]="task.important"
-    (updatedTaskImportant)="updateTaskImportant($event)"
-    [index]="index">
-  </app-modal-important-button>
-  <app-modal-cancel-button
-    slot="modal-cancel-button"
-    (click)="closeModal()">
-  </app-modal-cancel-button>
-  <app-modal-save-button
-    slot="modal-save-button"
-    [updatedTaskImportant]=""
-    [updatedTaskTitle]=""
-    (click)="saveTask(task, index)">
-  </app-modal-save-button>
-  <app-modal-delete-button slot="modal-delete-button"></app-modal-delete-button>
 </app-modal>

@@ -7,5 +7,6 @@ import { TaskInterface } from '../../interfaces/task.interface';
   styleUrls: ['modal.component.scss']
 })
 export class ModalComponent  {
+  modalForm: any;
 
 }

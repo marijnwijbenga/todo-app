@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { TaskInterface } from '../../../interfaces/task.interface';
 
 @Component({
@@ -8,12 +9,12 @@ import { TaskInterface } from '../../../interfaces/task.interface';
 })
 export class ModalInputComponent {
   @Input() task: TaskInterface = {title: '', important: false, completed: false}
-  @Input() taskTitle: string = '';
   @Input() index: number = 0;
-  @Output() updatedTaskTitle = new EventEmitter<object>();
 
-  updateTaskTitle(taskTitle: string, index: number) {
-    this.updatedTaskTitle.emit({taskTitle, index});
+  taskTitle = new FormControl(this.task.title);
+
+  getTitle(): void {
+    this.
   }
 
 }
