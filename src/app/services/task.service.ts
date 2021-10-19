@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { TASKS } from '../CONSTANTS/TASKS';
-import { TaskModel } from '../models/task.model';
+import { Observable, of } from 'rxjs';
+import { TASKS } from '../constants/TASKS';
+import { TaskInterface } from '../interfaces/task.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  tasks: TaskModel[] = TASKS;
+  tasks: TaskInterface[] = TASKS;
 
-  // create task
-  create(task: TaskModel): void {
+  create(task: TaskInterface): void {
     this.tasks.unshift({
       title: task.title,
       important: task.important,
@@ -18,20 +18,17 @@ export class TaskService {
     });
   }
 
-  //get all tasks
-  get(): TaskModel[] {
-    return this.tasks;
+  get$(): Observable<TaskInterface[]> {
+    return of(this.tasks);
   }
 
   //update task
-  update(task: TaskModel, index: number): TaskModel {
-    //todo get all values from the task in here and update all of them
-    console.log(index);
-
-    this.tasks[index].completed = task.completed;
-    this.tasks[index].title = task.title;
-    this.tasks[index].important = task.important;
-    console.log(this.tasks[index]);
+  update(task: TaskInterface, index: number): TaskInterface {
+    this.tasks[index] = {
+      title: task.title,
+      completed: task.completed,
+      important: task.important
+    }
     return task;
   }
 

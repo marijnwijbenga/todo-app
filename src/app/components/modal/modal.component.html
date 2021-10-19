@@ -1,0 +1,30 @@
+<div
+  class="modal__background">
+  <div class="modal">
+    <div class="modal__header">
+      <div>
+        <div class="modal__title">
+          Edit Task
+        </div>
+        <div class="m-4">
+          <div class="modal__controls">
+            <div>
+              <div>
+                <label for="itemTitle" class="modal__label">Title</label>
+              </div>
+              <ng-content select="[slot=modal-input]"></ng-content>
+            </div>
+            <ng-content select="[slot=modal-important-button]"></ng-content>
+            <div class="pt-6">
+              <ng-content select="[slot=modal-cancel-button]"></ng-content>
+              <ng-content select="[slot=modal-save-button]"></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-800 p-8 text-center flex flex-col rounded-b-lg">
+      <ng-content select="[slot=modal-delete-button]"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.modal {
+  @apply bg-gray-700 mx-auto rounded-lg shadow-lg flex flex-col justify-between mt-8;
+
+  &__background {
+    @apply fixed top-0 left-0 w-screen h-screen bg-gray-700 bg-opacity-80 flex flex-row items-center;
+  }
+
+  &__header {
+    @apply bg-green-700 pt-2 rounded-t-lg px-4;
+  }
+
+  &__title {
+    @apply text-center mb-2 font-semibold text-green-500 mt-4;
+  }
+
+  &__controls {
+    @apply flex flex-row items-center;
+  }
+
+  &__label {
+    @apply text-gray-800 font-semibold;
+  }
+
+
+
+}

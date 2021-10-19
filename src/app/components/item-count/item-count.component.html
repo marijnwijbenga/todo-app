@@ -1,0 +1,16 @@
+<div class="flex flex-row text-green-500 text-2xl font-semibold">
+  <div class="mr-2">
+    {{itemCount}}
+  </div>
+  <div class="text-green-50">
+    <span *ngIf="itemCount === 1; else elseBlock">
+      {{singular}}
+    </span>
+    <ng-template #elseBlock>
+      <span>
+        {{plural}}
+      </span>
+    </ng-template>
+  </div>
+</div>
+

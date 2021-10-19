@@ -5,21 +5,48 @@
   </app-heading>
   <app-panel-container>
     <app-panel>
-      <app-panel-header></app-panel-header>
-      <app-panel-body>
-
-      </app-panel-body>
-    </app-panel>
-    <app-panel>
-      <app-panel-header></app-panel-header>
+      <app-panel-header>
+        <app-item-count [itemCount]="amountOpenTasks" [singular]="'Task'" [plural]="'Tasks'"></app-item-count>
+        <app-filter-tasks (showCompletedOutput)="showCompletedTasks($event)"></app-filter-tasks>
+      </app-panel-header>
       <app-panel-body>
         <app-add-task
           placeholder="Add a Task">
         </app-add-task>
         <app-task-list>
-          <app-task [task]="task" *ngFor="let task of tasks; index as index" [index]="index" ></app-task>
+          <app-task
+            [task]="task"
+            *ngFor="let task of filteredTasks; index as index"
+            [index]="index"
+            (taskOutput)="openInModal($event)">
+          </app-task>
         </app-task-list>
       </app-panel-body>
     </app-panel>
   </app-panel-container>
 </app-page>
+<app-modal *ngIf="showModal">
+  <app-modal-input
+    slot="modal-input"
+    [task]="task"
+    [taskTitle]="task.title"
+    (updatedTaskTitle)="updateTaskTitle($event)"
+    [index]="index">
+  </app-modal-input>
+  <app-modal-important-button
+    slot="modal-important-button"
+    [task]="task"
+    [taskImportant]="task.important"
+    (updatedTaskImportant)="updateTaskImportant($event)"
+    [index]="index">
+  </app-modal-important-button>
+  <app-modal-cancel-button
+    slot="modal-cancel-button"
+    (click)="closeModal()">
+  </app-modal-cancel-button>
+  <app-modal-save-button
+    slot="modal-save-button"
+    (click)="saveTask(task, index)">
+  </app-modal-save-button>
+  <app-modal-delete-button slot="modal-delete-button"></app-modal-delete-button>
+</app-modal>
